@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a24327f61abcd90dc6edfe339f02a332",
+    "content-hash": "0e353259809e7eea68e072f16e3746ef",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -959,16 +959,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "dev-master",
+            "version": "7.5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "22ba4e0e2a75accab7e88a0c4622fccb358ee0a2"
+                "reference": "be5f75805b5323ee75ede2edce8ab9a77a61a47b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/22ba4e0e2a75accab7e88a0c4622fccb358ee0a2",
-                "reference": "22ba4e0e2a75accab7e88a0c4622fccb358ee0a2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be5f75805b5323ee75ede2edce8ab9a77a61a47b",
+                "reference": "be5f75805b5323ee75ede2edce8ab9a77a61a47b",
                 "shasum": ""
             },
             "require": {
@@ -981,7 +981,7 @@
                 "myclabs/deep-copy": "^1.7",
                 "phar-io/manifest": "^1.0.2",
                 "phar-io/version": "^2.0",
-                "php": "^7.2",
+                "php": "^7.1",
                 "phpspec/prophecy": "^1.7",
                 "phpunit/php-code-coverage": "^6.0.7",
                 "phpunit/php-file-iterator": "^2.0.1",
@@ -991,10 +991,13 @@
                 "sebastian/diff": "^3.0",
                 "sebastian/environment": "^4.0",
                 "sebastian/exporter": "^3.1",
-                "sebastian/global-state": "^3.0",
+                "sebastian/global-state": "^2.0",
                 "sebastian/object-enumerator": "^3.0.3",
                 "sebastian/resource-operations": "^2.0",
                 "sebastian/version": "^2.0.1"
+            },
+            "conflict": {
+                "phpunit/phpunit-mock-objects": "*"
             },
             "require-dev": {
                 "ext-pdo": "*"
@@ -1010,7 +1013,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "8.0-dev"
+                    "dev-master": "7.5-dev"
                 }
             },
             "autoload": {
@@ -1036,7 +1039,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-01-03T09:38:46+00:00"
+            "time": "2019-01-07T20:10:01+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -1209,12 +1212,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "febd209a219cea7b56ad799b30ebbea34b71eb8f"
+                "reference": "585fbcdeff7fb58c4b7596d8b2d6e97aef510611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/febd209a219cea7b56ad799b30ebbea34b71eb8f",
-                "reference": "febd209a219cea7b56ad799b30ebbea34b71eb8f",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/585fbcdeff7fb58c4b7596d8b2d6e97aef510611",
+                "reference": "585fbcdeff7fb58c4b7596d8b2d6e97aef510611",
                 "shasum": ""
             },
             "require": {
@@ -1251,7 +1254,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2018-11-25T09:31:21+00:00"
+            "time": "2019-01-07T17:23:37+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -1322,26 +1325,23 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "3c2d1b3a3417ba87e200f2d009f31dc5e76886cf"
+                "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/3c2d1b3a3417ba87e200f2d009f31dc5e76886cf",
-                "reference": "3c2d1b3a3417ba87e200f2d009f31dc5e76886cf",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
+                "reference": "e8ba02eed7bbbb9e59e43dedd3dddeff4a56b0c4",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2",
-                "sebastian/object-reflector": "^1.1.1",
-                "sebastian/recursion-context": "^3.0"
+                "php": "^7.0"
             },
             "require-dev": {
-                "ext-dom": "*",
-                "phpunit/phpunit": "^8.0"
+                "phpunit/phpunit": "^6.0"
             },
             "suggest": {
                 "ext-uopz": "*"
@@ -1349,7 +1349,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -1372,7 +1372,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2018-11-26T13:40:26+00:00"
+            "time": "2017-04-27T15:39:26+00:00"
         },
         {
             "name": "sebastian/object-enumerator",
@@ -1756,12 +1756,11 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "guzzlehttp/guzzle": 20,
-        "phpunit/phpunit": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.1.0"
+    },
     "platform-dev": []
 }

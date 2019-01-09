@@ -10,10 +10,9 @@ class FileJob extends Job
 
     private $convert = 0;
 
-    public function setMetadata(bool $metadata): self
+    public function setMetadata(bool $metadata): void
     {
         $this->metadata = (int) $metadata;
-        return $this;
     }
 
     public function getMetadata(): int
@@ -21,11 +20,9 @@ class FileJob extends Job
         return $this->metadata;
     }
 
-    public function setLossy(bool $lossy): self
+    public function setLossy(bool $lossy): void
     {
         $this->lossy = (int) $lossy;
-
-        return $this;
     }
 
     public function getLossy(): int
@@ -38,11 +35,8 @@ class FileJob extends Job
         return $this->convert;
     }
 
-    public function setConvert(bool $convert): self
+    public function setConvert(bool $convert): void
     {
         $this->convert = (int) $convert;
-
-        return $this;
     }
-
 }

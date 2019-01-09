@@ -41,9 +41,9 @@ class Converter
     private function processFileJob(FileJob $job)
     {
         // Get file resource
-        $file = fopen($job->getFileName(), 'r');
+        $file = fopen($job->getPath(), 'r');
         if ($file === false) {
-            throw new \Exception('Unable to open file: ' . $job->getFileName());
+            throw new \Exception('Unable to open file: ' . $job->getPath());
         }
 
         $options = [
@@ -74,7 +74,11 @@ class Converter
             ]
         ];
 
-        return $this->request($options);
+        $response = $this->request($options);
+        if (is_resource($file)) {
+            fclose($file);
+        }
+        return $response;
     }
 
     /**
@@ -98,7 +102,7 @@ class Converter
     private function processWebPJob(WebPJob $job): string
     {
         // Get file resource
-        $file = fopen($job->getFileName(), 'r');
+        $file = fopen($job->getPath(), 'r');
         if ($file === false) {
             throw new \Exception('Unable to open file: ' . $job->getFileName());
         }
@@ -134,6 +138,10 @@ class Converter
             ];
         }
 
-        return $this->request($options);
+        $response = $this->request($options);
+        if (is_resource($file)) {
+            fclose($file);
+        }
+        return $response;
     }
 }

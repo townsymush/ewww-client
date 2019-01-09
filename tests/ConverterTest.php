@@ -24,9 +24,9 @@ final class ConverterTest extends TestCase
 
     public function testConverterUsingFileJob()
     {
-        $fileJob = new FileJob();
-        $fileJob->setFileName($this->inputPath);
-        $fileJob->setLossy(true)->setConvert(true);
+        $fileJob = new FileJob($this->inputPath);
+        $fileJob->setLossy(true);
+        $fileJob->setConvert(true);
         $output = $this->converter->process($fileJob);
         file_put_contents(__DIR__ . '/data/output/convertfile.png', $output);
         $this->assertLessThan(filesize($this->inputPath), filesize(__DIR__ . '/data/output/convertfile.png'));
@@ -34,8 +34,7 @@ final class ConverterTest extends TestCase
 
     public function testConverterUsingWebPJob()
     {
-        $webPJob = new WebPJob();
-        $webPJob->setFileName($this->inputPath);
+        $webPJob = new WebPJob($this->inputPath);
         $output = $this->converter->process($webPJob);
         file_put_contents(__DIR__ . '/data/output/webp.webp', $output);
         $this->assertLessThan(filesize($this->inputPath), filesize(__DIR__ . '/data/output/webp.webp'));
@@ -43,14 +42,13 @@ final class ConverterTest extends TestCase
 
     public function testConverterUsingFileAndWebPJob()
     {
-        $fileJob = new FileJob();
-        $fileJob->setFileName($this->inputPath);
-        $fileJob->setLossy(true)->setConvert(true);
+        $fileJob = new FileJob($this->inputPath);
+        $fileJob->setLossy(true);
+        $fileJob->setConvert(true);
         $output = $this->converter->process($fileJob);
         file_put_contents(__DIR__ . '/data/output/convertfile.png', $output);
 
-        $webPJob = new WebPJob();
-        $webPJob->setFileName(__DIR__ . '/data/output/convertfile.png');
+        $webPJob = new WebPJob(__DIR__ . '/data/output/convertfile.png');
         $output = $this->converter->process($webPJob);
         file_put_contents(__DIR__ . '/data/output/webp.webp', $output);
 
