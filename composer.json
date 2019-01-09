@@ -1,5 +1,5 @@
 {
-    "name": "townsymuch/ewww-client",
+    "name": "townsymush/ewww-client",
     "description": "A client to use for connecting to the ewww API and converting images",
     "type": "library",
     "homepage": "https://github.com/townsymush/ewww-client",
