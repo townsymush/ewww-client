@@ -19,7 +19,7 @@ final class ConverterTest extends TestCase
     {
         parent::setUp();
         $client = new Client();
-        $this->converter = new Converter($client, 'YWHErzAFyvEAQQuG3DGv6j9Rg9iVQWXE');
+        $this->converter = new Converter($client, 'your-api-key');
     }
 
     public function testConverterUsingFileJob()
