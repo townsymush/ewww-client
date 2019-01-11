@@ -14,10 +14,12 @@ composer require townsymush/ewww-client
  ## Usage
  
  Create new instance of the converter
+ The converter requires your api key as a string and a Guzzle Client to make the API requests
 ```
 use TownsyMush\EwwwClient\Converter;
+use GuzzleHttp\Client;
 
-$converter = new Converter('your-api-key');
+$converter = new Converter(new Client, 'your-api-key');
 ```
 
 To convert/optimise and image you need to make a `Job` to process. There are two jobs `WebPJob` and `FileJob`
@@ -28,10 +30,11 @@ A `WebPJob` is used to convert an image (png, jpg) to a `webp` file.
 #### Create job
 If the file cannot be opened an exception will be thrown.
 ```
+use GuzzleHttp\Client;
 use TownsyMush\EwwwClient\Converter;
 use TownsyMush\EwwwClient\WebPJob;
 
-$converter = new Converter('your-api-key');
+$converter = new Converter(new Client, 'your-api-key');
 
 // Create new instance with filename set as 'filename'
 $job = new WebPJob('path-to-file', 'filename');
@@ -57,10 +60,11 @@ This job is used to optimise and image or convert a `jpg` or `gif` to `png`.
 #### Create job
 If the file cannot be opened an exception will be thrown.
 ```
+use GuzzleHttp\Client;
 use TownsyMush\EwwwClient\Converter;
 use TownsyMush\EwwwClient\FileJob;
 
-$converter = new Converter('your-api-key');
+$converter = new Converter(new Client, 'your-api-key');
 
 // Create new instance with filename set as 'filename'
 $job = new FileJob('path-to-file', 'filename');
@@ -97,10 +101,11 @@ $job->setConvert(true);
 Once a job has been created, the next step is to process that job with the converter.
 
 ```
+use GuzzleHttp\Client;
 use TownsyMush\EwwwClient\Converter;
 use TownsyMush\EwwwClient\FileJob;
 
-$converter = new Converter('your-api-key');
+$converter = new Converter(new Client, 'your-api-key');
 
 // Create new instance with filename set as 'filename'
 $job = new FileJob('path-to-file', 'filename');
